@@ -19,9 +19,8 @@ const images = [
           v-for="(img, idx) in images"
           :key="idx"
         >
-        <!-- loading="lazy" -->
-          <image
-
+          <!-- loading="lazy" -->
+          <img
             width="3744"
             height="5616"
             class="absolute inset-0 h-full w-full object-cover"
@@ -35,6 +34,3 @@ const images = [
     <Blog />
   </div>
 </template>
-
-
-
