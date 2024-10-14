@@ -20,12 +20,12 @@
     </div>
     <div class="relative w-full md:w-5/12 mt-5">
       <div class="relative overflow-hidden">
-        <NuxtImg
+        <img
           src="https://spotlight.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-3.454151b1.jpg&w=640&q=75"
           alt="hero img"
           class="w-full h-full rounded-2xl"
-          :placeholder="[50, 25, 75, 5]"
         />
+        <!-- :placeholder="[50, 25, 75, 5]" -->
       </div>
     </div>
   </div>

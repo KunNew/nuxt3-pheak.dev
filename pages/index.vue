@@ -19,8 +19,9 @@ const images = [
           v-for="(img, idx) in images"
           :key="idx"
         >
-          <NuxtImg
-            loading="lazy"
+        <!-- loading="lazy" -->
+          <image
+
             width="3744"
             height="5616"
             class="absolute inset-0 h-full w-full object-cover"
