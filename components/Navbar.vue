@@ -37,6 +37,22 @@ watch(isOpen, () => {
         <Icon v-else name="heroicons:x-mark" size="24" />
       </button>
 
+      <ul
+        class="flex-col items-end gap-y-4 hidden lg:flex lg:flex-row lg:items-center lg:gap-x-8"
+      >
+        <li class="relative" v-for="item in navigation" :key="item.label">
+          <NuxtLink
+            :to="item.to"
+            @click="closeDropdown"
+            class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary"
+          >
+            {{ item.label }}
+          </NuxtLink>
+        </li>
+        <li class="relative">
+          <ColorSwitcher />
+        </li>
+      </ul>
       <!-- <div
         class="navbar-nav lg:w-auto"
         :class="isOpen ? 'block w-full' : 'hidden lg:block'"
@@ -81,7 +97,7 @@ watch(isOpen, () => {
             <NuxtLink
               :to="item.to"
               @click="closeDropdown"
-              class="text-black dark:text-white group  hover:text-white flex gap-x-3 rounded-xl p-2 text-sm leading-6 font-semibold group-hover:text-primary"
+              class="text-black dark:text-white group hover:text-white flex gap-x-3 rounded-xl p-2 text-sm leading-6 font-semibold group-hover:text-primary"
             >
               {{ item.label }}
             </NuxtLink>
