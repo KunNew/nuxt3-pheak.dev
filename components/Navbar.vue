@@ -32,13 +32,18 @@ watch(isOpen, () => {
         <Logo />
       </div>
 
-      <button class="toggle-button lg:hidden" @click="isOpen = !isOpen">
-        <Icon v-if="!isOpen" name="heroicons:bars-2" size="24" />
-        <Icon v-else name="heroicons:x-mark" size="24" />
-      </button>
+      <div class="flex items-center gap-x-4 lg:hidden">
+        <button class="toggle-button inline-flex" @click="isOpen = !isOpen">
+          <Icon v-if="!isOpen" name="heroicons:bars-2" size="24" />
+          <Icon v-else name="heroicons:x-mark" size="24" />
+        </button>
+        <ClientOnly>
+          <ColorSwitcher />
+        </ClientOnly>
+      </div>
 
       <ul
-        class="flex-col items-end gap-y-4 hidden lg:flex lg:flex-row lg:items-center lg:gap-x-8"
+        class="flex-col items-end gap-y-4 hidden lg:flex lg:flex-row lg:items-center lg:gap-x-4"
       >
         <li class="relative" v-for="item in navigation" :key="item.label">
           <NuxtLink
@@ -50,7 +55,9 @@ watch(isOpen, () => {
           </NuxtLink>
         </li>
         <li class="relative">
-          <ColorSwitcher />
+          <ClientOnly>
+            <ColorSwitcher />
+          </ClientOnly>
         </li>
       </ul>
       <!-- <div
@@ -101,11 +108,6 @@ watch(isOpen, () => {
             >
               {{ item.label }}
             </NuxtLink>
-          </li>
-          <li class="relative">
-            <ClientOnly>
-              <ColorSwitcher />
-            </ClientOnly>
           </li>
         </ul>
       </nav>
