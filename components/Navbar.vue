@@ -23,7 +23,7 @@ watch(isOpen, () => {
 </script>
 <template>
   <nav
-    class="bg-white/60 dark:bg-slate-900/60 backdrop-blur supports-backdrop-blur:bg-white/95 border-b border-slate-900/10 dark:border-slate-50/[0.06] -mb-px sticky top-0 z-50 lg:mb-0"
+    class="bg-white/60 dark:bg-slate-900/60 backdrop-blur-md supports-backdrop-blur:bg-white/95 border-b border-slate-900/10 dark:border-slate-50/[0.06] -mb-px sticky top-0 z-50 lg:mb-0 shadow-gray-200 dark:shadow-gray-600"
   >
     <div
       class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-wrap items-center justify-between gap-3 h-auto py-4 lg:py-0 lg:h-16"
@@ -37,9 +37,7 @@ watch(isOpen, () => {
           <Icon v-if="!isOpen" name="heroicons:bars-2" size="24" />
           <Icon v-else name="heroicons:x-mark" size="24" />
         </button>
-        <ClientOnly>
-          <ColorSwitcher />
-        </ClientOnly>
+        <ThemeSelector />
       </div>
 
       <ul
@@ -55,9 +53,7 @@ watch(isOpen, () => {
           </NuxtLink>
         </li>
         <li class="relative">
-          <ClientOnly>
-            <ColorSwitcher />
-          </ClientOnly>
+          <ThemeSelector />
         </li>
       </ul>
       <!-- <div
